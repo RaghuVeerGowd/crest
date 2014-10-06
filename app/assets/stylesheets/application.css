@@ -1,0 +1,113 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require jquery.rambling.slider
+ */
+#wrapper {
+    position:relative;
+}
+#slider {
+    height:400px;
+    width: 500px;
+}
+#slider img {
+    width:700px;
+    height:400px;
+    display:none;
+    top:90px;
+    left: 381px;
+    position:absolute;
+}
+#nav {
+    background:beige;
+    width:200;
+    margin-top: 25px;
+    text-align:center;
+}
+#header {
+    position:fixed; /* fixing the position takes it out of html flow - knows
+    				   nothing about where to locate itself except by browser
+    				   coordinates */
+    left:0;			/* top left corner should start at leftmost spot */
+    top:0;			/* top left corner should start at topmost spot */
+    width:100%;		/* take up the full browser width */
+    z-index:200;	/* high z index so other content scrolls underneath */
+    height:40px; 	/* define height so you can define for content */
+    background-color: orange; /* otherwise content underneath will be visible */
+}
+#content {
+    min-height:100%;
+    width:960px;
+    margin:0 auto;
+    margin-top:130px; /* add top margin so doesn't hide under header */
+}
+body {
+padding: 20px;
+font-family: Arial, Helvetica, sans-serif;
+line-height: 1.5;
+font-size: 14px;        
+}
+
+.tabs-menu {
+    height: 30px;
+    float: left;
+    clear: both;
+}
+
+.tabs-menu li {
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    margin-right: 10px;
+    background-color: #ccc;
+    border-top: 1px solid #d4d4d1;
+    border-right: 1px solid #d4d4d1;
+    border-left: 1px solid #d4d4d1;
+}
+
+.tabs-menu li.current {
+    position: relative;
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+    z-index: 5;
+}
+
+.tabs-menu li a {
+    padding: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none; 
+}
+
+.tabs-menu .current a {
+    color: #2e7da3;
+}
+
+.tab {
+    border: 1px solid #d4d4d1;
+    background-color: #fff;
+    float: left;
+    margin-bottom: 20px;
+    width: auto;
+}
+
+.tab-content {
+    width: 660px;
+    padding: 20px;
+    display: none;
+}
+
+#tab-1 {
+ display: block;   
+}

@@ -1,0 +1,38 @@
+ <div align="left-top" style="margin:20px;padding:20px;">
+
+<h1>Listing Preceptors</h1>
+
+<table border="3" style="background-color:lightgreen;margin:20px;padding:20px;">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Center</th>
+      <th>Abyasi</th>
+      <th>Place</th>
+      <th>Role</th>
+      <th>Action</th>
+      <th>Action</th>
+       
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @preceptors.each do |preceptor| %>
+      <tr>
+        <td><%= preceptor.name %></td>
+        <td><%= preceptor.center %></td>
+        <td><%= preceptor.abyasi_id %></td>
+        <td><%= preceptor.place %></td>
+        <td><%= preceptor.role %></td>
+        <td><%= link_to 'Show', preceptor %></td>
+        <td><%= link_to 'Destroy', preceptor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+ 
+
+</div>
+

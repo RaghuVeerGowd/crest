@@ -1,0 +1,31 @@
+<div align="left-top" style="background-color:lightgreen;margin:20px;padding:20px;">
+ <h1>Preceptor Details</h1>
+
+<p>
+  <strong>Name:</strong>
+  <%= @preceptor.name %>
+</p>
+
+<p>
+  <strong>Center:</strong>
+  <%= @preceptor.center %>
+</p>
+
+<p>
+  <strong>Abyasi:</strong>
+  <%= @preceptor.abyasi_id %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @preceptor.place %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @preceptor.role %>
+</p>
+
+<%= link_to 'Edit', edit_preceptor_path(@preceptor) %> |
+<%= link_to 'Back',search_path %>
+</div>
