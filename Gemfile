@@ -11,6 +11,7 @@ gem 'therubyracer'
 gem 'paperclip'
 gem 'rambling-slider-rails' 
 gem 'devise'
+gem 'cancancan'
  
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

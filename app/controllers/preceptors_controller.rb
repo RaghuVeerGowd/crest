@@ -1,5 +1,7 @@
 class PreceptorsController < ApplicationController
   before_action :set_preceptor, only: [:show, :edit, :update, :destroy]
+   load_and_authorize_resource
+   skip_authorize_resource :only => :cresthome
 
   # GET /preceptors
   # GET /preceptors.json
