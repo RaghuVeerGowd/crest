@@ -1,70 +1,56 @@
  <h1 style="background-color:lightgreen;width: 180px;"><%=link_to "Check IN", search_path%></h1>
+ 
+<div id="owl-demo">
+  <div> <%= image_tag("pic1.jpg" , :id => "1")%></div>
+  <div> <%= image_tag("pic2.jpg" , :id => "2")%> </div>
+  <div><%= image_tag("pic3.jpg" , :id => "3")%> </div>
+  <div> <%= image_tag("pic4.jpg" , :id => "4")%> </div>
+  <div> <%= image_tag("pic5.jpg" , :id => "5")%></div>
+  <div><%= image_tag("pic6.jpg" , :id => "6")%> </div>
+  <div><%= image_tag("pic7.jpg" , :id => "7")%> </div>
+  <div> <%= image_tag("pic8.jpg" , :id => "8")%> </div>
+  <div> <%= image_tag("pic9.jpg" , :id => "9")%> </div>
+  <div> <%= image_tag("pic10.jpg" , :id => "10")%> </div>
+  <div> <%= image_tag("pic11.jpg" , :id => "11")%> </div>
+  <div> <%= image_tag("pic12.jpg" , :id => "12")%> </div>
+  <div> <%= image_tag("pic13.jpg" , :id => "13")%> </div>
+  <div> <%= image_tag("pic14.jpg" , :id => "14")%> </div>
+  <div> <%= image_tag("pic15.jpg" , :id => "15")%> </div>
+  <div> <%= image_tag("pic16.jpg" , :id => "16")%> </div>
+  <div> <%= image_tag("pic17.jpg" , :id => "17")%> </div>
+  <div> <%= image_tag("pic18.jpg" , :id => "18")%> </div>
+  <div> <%= image_tag("pic19.jpg" , :id => "19")%> </div>
+  <div> <%= image_tag("pic20.jpg" , :id => "20")%> </div>
+  <div> <%= image_tag("pic21.jpg" , :id => "21")%> </div>
 
-<div class="wrapper">
-    <div id="slider">
-        <%= image_tag("pic1.png" , :id => "1")%>
-       <%= image_tag("pic2.png", :id => "2") %>
-        <%= image_tag("pic3.png" , :id => "3")%>
-    </div>
-
+   
 </div>
- <div id="nav">
-    <a href="#left" class="left">previous</a>
-    <a href="#right" class="right">next</a>
-</div>
-
-
 <script type="text/javascript">
-	$(function () {
-    var count = $("#slider > img").length
-    var slider = 1
-    var speed=2000
-    var fadeSpeed = 500
-    var loop 
-    start()
-    $("#1").fadeIn(fadeSpeed);
-    $('.right').click(right)
-    $('.left').click(left)
-    $('#slider').hover(stop,start)
-    
-    function start(){
-        loop = setInterval(next, speed)
-    }
-    function stop(){
-        clearInterval(loop)
-    }
-    function right() {
-        stop()
-        next()
-        start()
-        return false
-    }
-
-    function left() {
-        stop()
-        prev()
-        start()
-        return false
-    }
-
-    function prev() {
-        slider--
-        if (slider < 1) {
-            slider = count
-        }
-
-        $("#slider > img").fadeOut(fadeSpeed)
-        $("#" + slider).fadeIn(fadeSpeed)
-    }
-
-    function next() {
-        slider++
-        if (slider > count) {
-            slider = 1
-        }
-
-        $("#slider > img").fadeOut(fadeSpeed)
-        $("#" + slider).fadeIn(fadeSpeed)
-    }
-});
+    $(".owl-carousel").owlCarousel();
 </script>
+
+<style type="text/css">
+    #owl-demo .item{
+  margin: 3px;
+}
+#owl-demo .item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+</style>
+ <script type="text/javascript">
+$(document).ready(function() {
+ 
+  $("#owl-demo").owlCarousel({
+ 
+      autoPlay: 2000, //Set AutoPlay to 3 seconds
+ 
+      items : 4,
+      itemsDesktop : [1199,3],
+      itemsDesktopSmall : [979,3]
+ 
+  });
+ 
+});
+ </script>
