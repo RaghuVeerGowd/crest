@@ -1,7 +1,10 @@
-<div align="left-top" style="margin:20px;padding:20px;">
+ <div align="left-top" style="margin:20px;padding:20px;">
 
 <h1>Listing Preceptors</h1>
+ 
+    <%= link_to "back" ,search_path%>
 
+  
 <table border="3" style="background-color:lightgreen;margin:20px;padding:20px;">
   <thead>
     <tr>
@@ -11,13 +14,14 @@
       <th>Place</th>
       <th>Role</th>
       <th>Action</th>
-      <th>Action</th>   
       <th>Action</th>
        
     </tr>
   </thead>
 
   <tbody>
+  
+     
     <% @preceptors.each do |preceptor| %>
       <tr>
         <td><%= preceptor.name %></td>
@@ -26,16 +30,50 @@
         <td><%= preceptor.place %></td>
         <td><%= preceptor.role %></td>
         <td><%= link_to 'Show', preceptor %></td>
-        <td><%= link_to 'Edit', edit_preceptor_path(preceptor) %></td>
         <td><%= link_to 'Destroy', preceptor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
+
 </table>
 
 <br>
-<h2>
-  <%= link_to 'New Preceptor', new_preceptor_path %>
-</h2>
+ <div class="apple_pagination">
+    <div class="page_info">
+      <%= page_entries_info  @preceptors %>
+    </div>
+    <%= will_paginate @preceptors, :container => false %>
+  </div>
 
 </div>
+
+
+<style type="text/css">
+  .apple_pagination {
+  background: #f1f1f1;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  padding: 1em;
+  cursor: default; }
+  .apple_pagination a, .apple_pagination span {
+    padding: 0.2em 0.3em; }
+  .apple_pagination .disabled {
+    color: #aaaaaa; }
+  .apple_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background-color: #bebebe;
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    line-height: 1.5;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
+    text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px; }
+  .apple_pagination a {
+    text-decoration: none;
+    color: black; }
+    .apple_pagination a:hover, .apple_pagination a:focus {
+      text-decoration: underline; }
+</style>

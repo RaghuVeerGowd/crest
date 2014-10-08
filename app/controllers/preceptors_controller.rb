@@ -6,7 +6,7 @@ class PreceptorsController < ApplicationController
   # GET /preceptors
   # GET /preceptors.json
   def index
-    @preceptors = Preceptor.all
+    @preceptors = Preceptor.all.paginate(:page => params[:page], :per_page => 3)
   end
 
   # GET /preceptors/1
@@ -66,7 +66,7 @@ class PreceptorsController < ApplicationController
   end
   def search 
     @preceptor = Preceptor.where(:abyasi_id=>params[:search])
-    @preceptors = Preceptor.all
+    @preceptors = Preceptor.all.paginate(:page => params[:page], :per_page => 3)
   end
    
 

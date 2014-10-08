@@ -13,6 +13,7 @@ gem 'rambling-slider-rails'
 gem 'devise'
 gem 'cancancan'
 gem 'owlcarousel-rails'
+gem 'will_paginate'
  
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
